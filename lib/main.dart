@@ -1,13 +1,14 @@
+import 'package:example/features/todo/pages/index_page.dart';
 import 'package:flutter/material.dart';
-import 'package:example/pages/todo/index_page.dart';
-import 'locator.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await initialize();
-
-  runApp(new MaterialApp(
-    title: "Layouts",
-    home: new TodoIndexPage(),
-  ));
+  runApp(
+    const ProviderScope(
+      child: MaterialApp(
+        title: "Example",
+        home: TodoIndexPage(), //
+      ),
+    ),
+  );
 }

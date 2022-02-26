@@ -7,4 +7,7 @@ class Todo {
       : id = map['id'],
         title = map['title'],
         completed = map['completed'];
+
+  static List<Todo> fromList(List items) =>
+      items.map((item) => Todo.fromMap(item)).toList();
 }
